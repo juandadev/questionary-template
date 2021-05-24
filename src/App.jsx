@@ -6,7 +6,7 @@ import "./App.scss";
 
 const diseases = {
   1: [
-    "diabetes",
+    "Diabetes",
     "sed",
     "miccion",
     "borros",
@@ -19,7 +19,7 @@ const diseases = {
     "entume",
   ],
   2: [
-    "covid-19",
+    "Covid-19",
     "fiebre",
     "tos",
     "cansancio",
@@ -33,7 +33,7 @@ const diseases = {
     "presion",
   ],
   3: [
-    "obesidad",
+    "Obesidad",
     "dormir",
     "espalda",
     "articulaciones",
@@ -45,7 +45,7 @@ const diseases = {
     "depresion",
   ],
   4: [
-    "estrés, diarrea o estreñimiento",
+    "Estrés, diarrea o estreñimiento",
     "memoria",
     "achaques",
     "cabeza",
@@ -57,7 +57,7 @@ const diseases = {
     "cansancio",
   ],
   5: [
-    "bronquitis, tos",
+    "Bronquitis, tos",
     "mucosidad",
     "transparente",
     "blanc",
@@ -111,7 +111,9 @@ function App() {
     );
     const winner = results.filter((item) => maxCoincidence === item[1]);
 
-    return winner[0][0];
+    return winner[0][1] === 0
+      ? "Se necesita más detalle en los síntomas"
+      : winner[0][0];
   }
 
   function handleChange(e) {
